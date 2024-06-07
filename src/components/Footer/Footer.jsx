@@ -45,7 +45,7 @@ const Footer = () => {
       <StackColumn>
         <FooterTitle text={'address'} />
         <FooterLink 
-        text={'52/2, Saraswati Nagar Firozabad, Uttar Pradesh, India 283203'} 
+        text={'Firozabad, Uttar Pradesh, India 283203'} 
         />
         <FooterLink 
         text={'9996664455'} 
