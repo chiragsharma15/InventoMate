@@ -14,7 +14,7 @@ export default function AddProduct({
     manufacturer: "",
     description: "",
   });
-  console.log("----",product)
+  console.log("----", product);
   const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
 
@@ -24,6 +24,20 @@ export default function AddProduct({
 
   const addProduct = () => {
     fetch("https://steep-pretty-cartwheel.glitch.me/api/product/add", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((result) => {
+        alert("Product ADDED");
+        handlePageUpdate();
+        addProductModalSetting();
+      })
+      .catch((err) => console.log(err));
+
+    fetch("http://127.0.0.1:5000/addProduct", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

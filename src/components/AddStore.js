@@ -9,7 +9,7 @@ export default function AddStore() {
   const [form, setForm] = useState({
     userId: authContext.user,
     name: "",
-    category: "",
+    category: "Glassware",
     address: "",
     city: "",
     image: "",
@@ -23,6 +23,17 @@ export default function AddStore() {
   const cancelButtonRef = useRef(null);
 
   const addProduct = () => {
+           
+    fetch("http://127.0.0.1:5000/addStore", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(form),
+    })
+      .then((result) => {
+      })
+      .catch((err) => console.log(err));
     fetch("https://steep-pretty-cartwheel.glitch.me/api/store/add", {
       method: "POST",
       headers: {

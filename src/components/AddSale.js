@@ -28,6 +28,18 @@ export default function AddSale({
 
   // POST Data
   const addSale = () => {
+        
+    fetch("http://127.0.0.1:5000/addSale", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(sale),
+    })
+      .then((result) => {
+      })
+      .catch((err) => console.log(err));
+
     fetch("https://steep-pretty-cartwheel.glitch.me/api/sales/add", {
       method: "POST",
       headers: {

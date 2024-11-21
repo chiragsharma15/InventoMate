@@ -21,6 +21,18 @@ function Register() {
 
   // Register User
   const registerUser = () => {
+          
+    fetch("http://127.0.0.1:5000/addUser", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(form),
+    })
+      .then((result) => {
+      })
+      .catch((err) => console.log(err));
+
     fetch("https://steep-pretty-cartwheel.glitch.me/api/register", {
       method: "POST",
       headers: {
